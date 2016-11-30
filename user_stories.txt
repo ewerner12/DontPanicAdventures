@@ -4,24 +4,30 @@ Eric Werner
 Capstone
 
 
-USER STORIES:
-==============
+/////////////////
+//USER STORIES://
+/////////////////
 >>As an end user, I want to create a profile (email address, first name, password)
 >>As an end user, I want to save travel preferences (default departure city) via bot
 >>As an end user, I want to update profile preferences (name, email address, password, default weekly amount saved towards cost of trips) via bot
->>As an end user, I want to be able to save a specific trip and update budget and anticipated departure date information
-
 
 >>As a bot, I want to offer potential trip results based on user preferences
->>As a bot, I want to offer potential trip results based on user input (departure city, desired destination, attraction, language, hobby, cuisine, maximum amount budgeted)
->>As a bot, I want to sort results by overall price, flight price, hotel price, number of flight stops
->>As a bot, I want to include an option to update a specific search parameter without having to start search over
+>>As a bot, I want to offer potential trip results based on user input (departure city, maximum amount budgeted)
+>>As a bot, I want to sort results by overall price, number of flight stops
 >>As a bot, I want to calculate anticipated departure date based on cost of trip and amount saved per week OR calculate amount needed to save per week based on desired departure date
 >>As a bot, I want to update departure date OR required weekly amount to save based on amount already saved
 
-
 >>As a developer, I want to incorporate bot A.I. to interact with end user and gather information for search parameters
 >>As a developer, I want to include a section with travel tips
->>As a developer, I want to include a section in which users can post photos from their trips (name, destination, arrival month and year)
+>>As a developer, I want to include a section in which users can post photos from their trips (with name, destination, arrival month and year)
 >>As a developer, I want to offer Google and Facebook login options
+
+
+////////////////////////
+//Week 3+ User Stories//
+////////////////////////
+>>As an end user, I want to be able to save a specific trip and update budget and anticipated departure date information
+>>As a bot, I want to offer potential trip results based on user input (desired destination, attraction, language, hobby, cuisine)
+>>As a bot, I want to sort results by flight price, hotel price
+>>As a bot, I want to include an option to update a specific search parameter without having to start search over
 >>As a developer, I want to make each result clickable and display it on a map
