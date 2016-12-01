@@ -8,12 +8,17 @@ using System.Web.Http.Description;
 using Microsoft.Bot.Connector;
 using Newtonsoft.Json;
 using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.Bot.Builder.FormFlow;
 
 namespace DontPanicBot
 {
     [BotAuthentication]
     public class MessagesController : ApiController
     {
+        internal static IDialog<FlightSearchForm> FlightSearch()
+        {
+            return Chain.From(() => FormDialog.FromForm(FlightSearchForm.BuildForm));
+        }
         /// <summary>
         /// POST: api/Messages
         /// Receive a message from a user and reply to it
@@ -24,7 +29,11 @@ namespace DontPanicBot
 
             if (activity != null && activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new EchoDialog());
+                //////var greeting = activity.CreateReply("Hello! Please type 'start trip search' to begin planning your next vacation!");
+                //////await connector.Conversations.ReplyToActivityAsync(greeting);
+                await Conversation.SendAsync(activity, () => new FlightSearchDialog());
+
+                //await Conversation.SendAsync(activity, () => new EchoDialog());
 
                 //////// calculate something for us to return
                 //////int length = (activity.Text ?? string.Empty).Length;
@@ -54,6 +63,14 @@ namespace DontPanicBot
                 // Handle conversation state changes, like members being added and removed
                 // Use Activity.MembersAdded and Activity.MembersRemoved and Activity.Action for info
                 // Not available in all channels
+                if (message.Action == "add")
+                {
+                    return message.CreateReply($"Hello {message.From.Name} and welcome to Don't Panic Adventures!");
+                }
+                if (message.Action == "remove")
+                {
+                    return message.CreateReply($"{message.From.Name} has left the chat...");
+                }
             }
             else if (message.Type == ActivityTypes.ContactRelationUpdate)
             {
@@ -61,7 +78,7 @@ namespace DontPanicBot
                 // Activity.From + Activity.Action represent what happened
                 if (message.Action == "add")
                 {
-                    return message.CreateReply($"Hello {message.From.Name} and welcome to your Don't Panic Adventures bot conversation!");
+                    return message.CreateReply($"Hello {message.From.Name} and welcome to Don't Panic Adventures!");
                 }
                 if (message.Action == "remove")
                 {
@@ -80,72 +97,72 @@ namespace DontPanicBot
             return null;
         }
 
-        [Serializable]
-        public class EchoDialog : IDialog<object>
-        {
-            protected int count = 1;
+        //[Serializable]
+        //public class EchoDialog : IDialog<object>
+        //{
+        //    protected int count = 1;
 
-            public async Task StartAsync(IDialogContext context)
-            {
-                context.Wait(MessageReceivedAsync);
-            }
+        //    public async Task StartAsync(IDialogContext context)
+        //    {
+        //        context.Wait(MessageReceivedAsync);
+        //    }
 
-            public async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> argument)
-            {
-                var message = await argument;
+        //    public async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> argument)
+        //    {
+        //        var message = await argument;
 
-                if (message.Text == "reset")
-                {
-                    PromptDialog.Confirm(context,
-                                            AfterResetAsync,
-                                            "Are you sure you want to reset the count?",
-                                            "Sorry, I didn't catch that!",
-                                            promptStyle: PromptStyle.None);
-                }
-                else
-                {
-                    await context.PostAsync($"[{count++}] You said: {message.Text}");
-                    context.Wait(MessageReceivedAsync);
-                }
-            }
+        //        if (message.Text == "reset")
+        //        {
+        //            PromptDialog.Confirm(context,
+        //                                    AfterResetAsync,
+        //                                    "Are you sure you want to reset the count?",
+        //                                    "Sorry, I didn't catch that!",
+        //                                    promptStyle: PromptStyle.None);
+        //        }
+        //        else
+        //        {
+        //            await context.PostAsync($"[{count++}] You said: {message.Text}");
+        //            context.Wait(MessageReceivedAsync);
+        //        }
+        //    }
 
-            public async Task AfterResetAsync(IDialogContext context, IAwaitable<bool> argument)
-            {
-                var confirm = await argument;
+        //    public async Task AfterResetAsync(IDialogContext context, IAwaitable<bool> argument)
+        //    {
+        //        var confirm = await argument;
                 
-                if (confirm)
-                {
-                    this.count = 1;
-                    await context.PostAsync("Count has been reset.");
-                }
-                else
-                {
-                    await context.PostAsync("Count was not reset.");
-                }
-                context.Wait(MessageReceivedAsync);
-            }
+        //        if (confirm)
+        //        {
+        //            this.count = 1;
+        //            await context.PostAsync("Count has been reset.");
+        //        }
+        //        else
+        //        {
+        //            await context.PostAsync("Count was not reset.");
+        //        }
+        //        context.Wait(MessageReceivedAsync);
+        //    }
 
 
-        }
+        //}
 
-        public class SampleDialog : IDialog<object>
-        {
-            protected string firstName;
-            protected string lastName;
-
-
-            public async Task StartAsync(IDialogContext context)
-            {
-                context.Wait(ReceivedAsyncMessage);
-            }
-
-            public async Task ReceivedAsyncMessage(IDialogContext context, IAwaitable<IMessageActivity> argument)
-            {
-                var message = await argument;
+        //public class SampleDialog : IDialog<object>
+        //{
+        //    protected string firstName;
+        //    protected string lastName;
 
 
-            }
-        }
+        //    public async Task StartAsync(IDialogContext context)
+        //    {
+        //        context.Wait(ReceivedAsyncMessage);
+        //    }
+
+        //    public async Task ReceivedAsyncMessage(IDialogContext context, IAwaitable<IMessageActivity> argument)
+        //    {
+        //        var message = await argument;
+
+
+        //    }
+        //}
 
 
 
