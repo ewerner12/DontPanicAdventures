@@ -1,0 +1,739 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.QPXExpress.v1</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.QPXExpress.v1.QPXExpressService">
+            <summary>The QPXExpress Service.</summary>
+        </member>
+        <member name="F:Google.Apis.QPXExpress.v1.QPXExpressService.Version">
+            <summary>The API version.</summary>
+        </member>
+        <member name="F:Google.Apis.QPXExpress.v1.QPXExpressService.DiscoveryVersionUsed">
+            <summary>The discovery version used to generate this service.</summary>
+        </member>
+        <member name="M:Google.Apis.QPXExpress.v1.QPXExpressService.#ctor">
+            <summary>Constructs a new service.</summary>
+        </member>
+        <member name="M:Google.Apis.QPXExpress.v1.QPXExpressService.#ctor(Google.Apis.Services.BaseClientService.Initializer)">
+            <summary>Constructs a new service.</summary>
+            <param name="initializer">The service initializer.</param>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.QPXExpressService.Features">
+            <summary>Gets the service supported features.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.QPXExpressService.Name">
+            <summary>Gets the service name.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.QPXExpressService.BaseUri">
+            <summary>Gets the service base URI.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.QPXExpressService.BasePath">
+            <summary>Gets the service base path.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.QPXExpressService.Trips">
+            <summary>Gets the Trips resource.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.QPXExpressBaseServiceRequest`1">
+            <summary>A base abstract class for QPXExpress requests.</summary>
+        </member>
+        <member name="M:Google.Apis.QPXExpress.v1.QPXExpressBaseServiceRequest`1.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new QPXExpressBaseServiceRequest instance.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.QPXExpressBaseServiceRequest`1.Alt">
+            <summary>Data format for the response.</summary>
+            [default: json]
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.QPXExpressBaseServiceRequest`1.AltEnum">
+            <summary>Data format for the response.</summary>
+        </member>
+        <member name="F:Google.Apis.QPXExpress.v1.QPXExpressBaseServiceRequest`1.AltEnum.Json">
+            <summary>Responses with Content-Type of application/json</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.QPXExpressBaseServiceRequest`1.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.QPXExpressBaseServiceRequest`1.Key">
+            <summary>API key. Your API key identifies your project and provides you with API access, quota, and reports.
+            Required unless you provide an OAuth 2.0 token.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.QPXExpressBaseServiceRequest`1.OauthToken">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.QPXExpressBaseServiceRequest`1.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+            [default: true]
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.QPXExpressBaseServiceRequest`1.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string
+            assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.QPXExpressBaseServiceRequest`1.UserIp">
+            <summary>IP address of the site where the request originates. Use this if you want to enforce per-user
+            limits.</summary>
+        </member>
+        <member name="M:Google.Apis.QPXExpress.v1.QPXExpressBaseServiceRequest`1.InitParameters">
+            <summary>Initializes QPXExpress parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.TripsResource">
+            <summary>The "trips" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.QPXExpress.v1.TripsResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.QPXExpress.v1.TripsResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.QPXExpress.v1.TripsResource.Search(Google.Apis.QPXExpress.v1.Data.TripsSearchRequest)">
+            <summary>Returns a list of flights.</summary>
+            <param name="body">The body of the request.</param>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.TripsResource.SearchRequest">
+            <summary>Returns a list of flights.</summary>
+        </member>
+        <member name="M:Google.Apis.QPXExpress.v1.TripsResource.SearchRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.QPXExpress.v1.Data.TripsSearchRequest)">
+            <summary>Constructs a new Search request.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.TripsResource.SearchRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.QPXExpress.v1.TripsResource.SearchRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.TripsResource.SearchRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.TripsResource.SearchRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.TripsResource.SearchRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.QPXExpress.v1.TripsResource.SearchRequest.InitParameters">
+            <summary>Initializes Search parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.AircraftData">
+            <summary>The make, model, and type of an aircraft.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.AircraftData.Code">
+            <summary>The aircraft code. For example, for a Boeing 777 the code would be 777.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.AircraftData.Kind">
+            <summary>Identifies this as an aircraftData object. Value: the fixed string
+            qpxexpress#aircraftData</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.AircraftData.Name">
+            <summary>The name of an aircraft, for example Boeing 777.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.AircraftData.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.AirportData">
+            <summary>An airport.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.AirportData.City">
+            <summary>The city code an airport is located in. For example, for JFK airport, this is NYC.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.AirportData.Code">
+            <summary>An airport's code. For example, for Boston Logan airport, this is BOS.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.AirportData.Kind">
+            <summary>Identifies this as an airport object. Value: the fixed string qpxexpress#airportData.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.AirportData.Name">
+            <summary>The name of an airport. For example, for airport BOS the name is "Boston Logan
+            International".</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.AirportData.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.BagDescriptor">
+            <summary>Information about an item of baggage.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.BagDescriptor.CommercialName">
+            <summary>Provides the commercial name for an optional service.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.BagDescriptor.Count">
+            <summary>How many of this type of bag will be checked on this flight.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.BagDescriptor.Description">
+            <summary>A description of the baggage.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.BagDescriptor.Kind">
+            <summary>Identifies this as a baggage object. Value: the fixed string qpxexpress#bagDescriptor.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.BagDescriptor.Subcode">
+            <summary>The standard IATA subcode used to identify this optional service.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.BagDescriptor.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.CarrierData">
+            <summary>Information about a carrier (ie. an airline, bus line, railroad, etc) that might be useful to display
+            to an end-user.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.CarrierData.Code">
+            <summary>The IATA designator of a carrier (airline, etc). For example, for American Airlines, the code is
+            AA.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.CarrierData.Kind">
+            <summary>Identifies this as a kind of carrier (ie. an airline, bus line, railroad, etc). Value: the fixed
+            string qpxexpress#carrierData.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.CarrierData.Name">
+            <summary>The long, full name of a carrier. For example: American Airlines.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.CarrierData.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.CityData">
+            <summary>Information about a city that might be useful to an end-user; typically the city of an
+            airport.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.CityData.Code">
+            <summary>The IATA character ID of a city. For example, for Boston this is BOS.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.CityData.Country">
+            <summary>The two-character country code of the country the city is located in. For example, US for the
+            United States of America.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.CityData.Kind">
+            <summary>Identifies this as a city, typically with one or more airports. Value: the fixed string
+            qpxexpress#cityData.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.CityData.Name">
+            <summary>The full name of a city. An example would be: New York.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.CityData.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.Data">
+            <summary>Detailed information about components found in the solutions of this response, including a trip's
+            airport, city, taxes, airline, and aircraft.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.Data.Aircraft">
+            <summary>The aircraft that is flying between an origin and destination.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.Data.Airport">
+            <summary>The airport of an origin or destination.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.Data.Carrier">
+            <summary>The airline carrier of the aircraft flying between an origin and destination. Allowed values are
+            IATA carrier codes.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.Data.City">
+            <summary>The city that is either the origin or destination of part of a trip.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.Data.Kind">
+            <summary>Identifies this as QPX Express response resource, including a trip's airport, city, taxes, airline,
+            and aircraft. Value: the fixed string qpxexpress#data.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.Data.Tax">
+            <summary>The taxes due for flying between an origin and a destination.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.Data.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.FareInfo">
+            <summary>Complete information about a fare used in the solution to a low-fare search query. In the airline
+            industry a fare is a price an airline charges for one-way travel between two points. A fare typically contains a
+            carrier code, two city codes, a price, and a fare basis. (A fare basis is a one-to-eight character alphanumeric
+            code used to identify a fare.)</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.FareInfo.Carrier">
+            <summary>The carrier of the aircraft or other vehicle commuting between two points.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.FareInfo.Destination">
+            <summary>The city code of the city the trip ends at.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.FareInfo.Id">
+            <summary>A unique identifier of the fare.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.FareInfo.Kind">
+            <summary>Identifies this as a fare object. Value: the fixed string qpxexpress#fareInfo.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.FareInfo.Origin">
+            <summary>The city code of the city the trip begins at.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.FareInfo.Private__">
+            <summary>Whether this is a private fare, for example one offered only to select customers rather than the
+            general public.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.FareInfo.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.FlightInfo">
+            <summary>A flight is a sequence of legs with the same airline carrier and flight number. (A leg is the smallest
+            unit of travel, in the case of a flight a takeoff immediately followed by a landing at two set points on a
+            particular carrier with a particular flight number.) The naive view is that a flight is scheduled travel of an
+            aircraft between two points, with possibly intermediate stops, but carriers will frequently list flights that
+            require a change of aircraft between legs.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.FlightInfo.Number">
+            <summary>The flight number.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.FlightInfo.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.FreeBaggageAllowance">
+            <summary>Information about free baggage allowed on one segment of a trip.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.FreeBaggageAllowance.BagDescriptor">
+            <summary>A representation of a type of bag, such as an ATPCo subcode, Commercial Name, or other
+            description.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.FreeBaggageAllowance.Kilos">
+            <summary>The maximum number of kilos all the free baggage together may weigh.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.FreeBaggageAllowance.KilosPerPiece">
+            <summary>The maximum number of kilos any one piece of baggage may weigh.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.FreeBaggageAllowance.Kind">
+            <summary>Identifies this as free baggage object, allowed on one segment of a trip. Value: the fixed string
+            qpxexpress#freeBaggageAllowance.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.FreeBaggageAllowance.Pieces">
+            <summary>The number of free pieces of baggage allowed.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.FreeBaggageAllowance.Pounds">
+            <summary>The number of pounds of free baggage allowed.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.FreeBaggageAllowance.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.LegInfo">
+            <summary>Information about a leg. (A leg is the smallest unit of travel, in the case of a flight a takeoff
+            immediately followed by a landing at two set points on a particular carrier with a particular flight
+            number.)</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.LegInfo.Aircraft">
+            <summary>The aircraft (or bus, ferry, railcar, etc) travelling between the two points of this leg.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.LegInfo.ArrivalTime">
+            <summary>The scheduled time of arrival at the destination of the leg, local to the point of
+            arrival.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.LegInfo.ChangePlane">
+            <summary>Whether you have to change planes following this leg. Only applies to the next leg.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.LegInfo.ConnectionDuration">
+            <summary>Duration of a connection following this leg, in minutes.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.LegInfo.DepartureTime">
+            <summary>The scheduled departure time of the leg, local to the point of departure.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.LegInfo.Destination">
+            <summary>The leg destination as a city and airport.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.LegInfo.DestinationTerminal">
+            <summary>The terminal the flight is scheduled to arrive at.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.LegInfo.Duration">
+            <summary>The scheduled travelling time from the origin to the destination.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.LegInfo.Id">
+            <summary>An identifier that uniquely identifies this leg in the solution.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.LegInfo.Kind">
+            <summary>Identifies this as a leg object. A leg is the smallest unit of travel, in the case of a flight a
+            takeoff immediately followed by a landing at two set points on a particular carrier with a particular flight
+            number. Value: the fixed string qpxexpress#legInfo.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.LegInfo.Meal">
+            <summary>A simple, general description of the meal(s) served on the flight, for example: "Hot
+            meal".</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.LegInfo.Mileage">
+            <summary>The number of miles in this leg.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.LegInfo.OnTimePerformance">
+            <summary>In percent, the published on time performance on this leg.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.LegInfo.OperatingDisclosure">
+            <summary>Department of Transportation disclosure information on the actual operator of a flight in a code
+            share. (A code share refers to a marketing agreement between two carriers, where one carrier will list in
+            its schedules (and take bookings for) flights that are actually operated by another carrier.)</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.LegInfo.Origin">
+            <summary>The leg origin as a city and airport.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.LegInfo.OriginTerminal">
+            <summary>The terminal the flight is scheduled to depart from.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.LegInfo.Secure">
+            <summary>Whether passenger information must be furnished to the United States Transportation Security
+            Administration (TSA) prior to departure.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.LegInfo.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.PassengerCounts">
+            <summary>The number and type of passengers. Unfortunately the definition of an infant, child, adult, and senior
+            citizen varies across carriers and reservation systems.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PassengerCounts.AdultCount">
+            <summary>The number of passengers that are adults.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PassengerCounts.ChildCount">
+            <summary>The number of passengers that are children.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PassengerCounts.InfantInLapCount">
+            <summary>The number of passengers that are infants travelling in the lap of an adult.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PassengerCounts.InfantInSeatCount">
+            <summary>The number of passengers that are infants each assigned a seat.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PassengerCounts.Kind">
+            <summary>Identifies this as a passenger count object, representing the number of passengers. Value: the
+            fixed string qpxexpress#passengerCounts.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PassengerCounts.SeniorCount">
+            <summary>The number of passengers that are senior citizens.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PassengerCounts.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.PricingInfo">
+            <summary>The price of one or more travel segments. The currency used to purchase tickets is usually determined
+            by the sale/ticketing city or the sale/ticketing country, unless none are specified, in which case it defaults
+            to that of the journey origin country.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PricingInfo.BaseFareTotal">
+            <summary>The total fare in the base fare currency (the currency of the country of origin). This element is
+            only present when the sales currency and the currency of the country of commencement are
+            different.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PricingInfo.Fare">
+            <summary>The fare used to price one or more segments.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PricingInfo.FareCalculation">
+            <summary>The horizontal fare calculation. This is a field on a ticket that displays all of the relevant
+            items that go into the calculation of the fare.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PricingInfo.Kind">
+            <summary>Identifies this as a pricing object, representing the price of one or more travel segments. Value:
+            the fixed string qpxexpress#pricingInfo.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PricingInfo.LatestTicketingTime">
+            <summary>The latest ticketing time for this pricing assuming the reservation occurs at ticketing time and
+            there is no change in fares/rules. The time is local to the point of sale (POS).</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PricingInfo.Passengers">
+            <summary>The number of passengers to which this price applies.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PricingInfo.Ptc">
+            <summary>The passenger type code for this pricing. An alphanumeric code used by a carrier to restrict fares
+            to certain categories of passenger. For instance, a fare might be valid only for senior citizens.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PricingInfo.Refundable">
+            <summary>Whether the fares on this pricing are refundable.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PricingInfo.SaleFareTotal">
+            <summary>The total fare in the sale or equivalent currency.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PricingInfo.SaleTaxTotal">
+            <summary>The taxes in the sale or equivalent currency.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PricingInfo.SaleTotal">
+            <summary>Total per-passenger price (fare and tax) in the sale or equivalent currency.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PricingInfo.SegmentPricing">
+            <summary>The per-segment price and baggage information.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PricingInfo.Tax">
+            <summary>The taxes used to calculate the tax total per ticket.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.PricingInfo.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.SegmentInfo">
+            <summary>Details of a segment of a flight; a segment is one or more consecutive legs on the same flight. For
+            example a hypothetical flight ZZ001, from DFW to OGG, would have one segment with two legs: DFW to HNL (leg 1),
+            HNL to OGG (leg 2), and DFW to OGG (legs 1 and 2).</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SegmentInfo.BookingCode">
+            <summary>The booking code or class for this segment.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SegmentInfo.BookingCodeCount">
+            <summary>The number of seats available in this booking code on this segment.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SegmentInfo.Cabin">
+            <summary>The cabin booked for this segment.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SegmentInfo.ConnectionDuration">
+            <summary>In minutes, the duration of the connection following this segment.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SegmentInfo.Duration">
+            <summary>The duration of the flight segment in minutes.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SegmentInfo.Flight">
+            <summary>The flight this is a segment of.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SegmentInfo.Id">
+            <summary>An id uniquely identifying the segment in the solution.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SegmentInfo.Kind">
+            <summary>Identifies this as a segment object. A segment is one or more consecutive legs on the same flight.
+            For example a hypothetical flight ZZ001, from DFW to OGG, could have one segment with two legs: DFW to HNL
+            (leg 1), HNL to OGG (leg 2). Value: the fixed string qpxexpress#segmentInfo.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SegmentInfo.Leg">
+            <summary>The legs composing this segment.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SegmentInfo.MarriedSegmentGroup">
+            <summary>The solution-based index of a segment in a married segment group. Married segments can only be
+            booked together. For example, an airline might report a certain booking code as sold out from Boston to
+            Pittsburgh, but as available as part of two married segments Boston to Chicago connecting through
+            Pittsburgh. For example content of this field, consider the round-trip flight ZZ1 PHX-PHL ZZ2 PHL-CLT ZZ3
+            CLT-PHX. This has three segments, with the two outbound ones (ZZ1 ZZ2) married. In this case, the two
+            outbound segments belong to married segment group 0, and the return segment belongs to married segment group
+            1.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SegmentInfo.SubjectToGovernmentApproval">
+            <summary>Whether the operation of this segment remains subject to government approval.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SegmentInfo.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.SegmentPricing">
+            <summary>The price of this segment.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SegmentPricing.FareId">
+            <summary>A segment identifier unique within a single solution. It is used to refer to different parts of the
+            same solution.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SegmentPricing.FreeBaggageOption">
+            <summary>Details of the free baggage allowance on this segment.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SegmentPricing.Kind">
+            <summary>Identifies this as a segment pricing object, representing the price of this segment. Value: the
+            fixed string qpxexpress#segmentPricing.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SegmentPricing.SegmentId">
+            <summary>Unique identifier in the response of this segment.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SegmentPricing.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.SliceInfo">
+            <summary>Information about a slice. A slice represents a traveller's intent, the portion of a low-fare search
+            corresponding to a traveler's request to get between two points. One-way journeys are generally expressed using
+            1 slice, round-trips using 2. For example, if a traveler specifies the following trip in a user interface: |
+            Origin | Destination | Departure Date | | BOS | LAX | March 10, 2007 | | LAX | SYD | March 17, 2007 | | SYD |
+            BOS | March 22, 2007 | then this is a three slice trip.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SliceInfo.Duration">
+            <summary>The duration of the slice in minutes.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SliceInfo.Kind">
+            <summary>Identifies this as a slice object. A slice represents a traveller's intent, the portion of a low-
+            fare search corresponding to a traveler's request to get between two points. One-way journeys are generally
+            expressed using 1 slice, round-trips using 2. Value: the fixed string qpxexpress#sliceInfo.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SliceInfo.Segment">
+            <summary>The segment(s) constituting the slice.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SliceInfo.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.SliceInput">
+            <summary>Criteria a desired slice must satisfy.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SliceInput.Alliance">
+            <summary>Slices with only the carriers in this alliance should be returned; do not use this field with
+            permittedCarrier. Allowed values are ONEWORLD, SKYTEAM, and STAR.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SliceInput.Date">
+            <summary>Departure date in YYYY-MM-DD format.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SliceInput.Destination">
+            <summary>Airport or city IATA designator of the destination.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SliceInput.Kind">
+            <summary>Identifies this as a slice input object, representing the criteria a desired slice must satisfy.
+            Value: the fixed string qpxexpress#sliceInput.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SliceInput.MaxConnectionDuration">
+            <summary>The longest connection between two legs, in minutes, you are willing to accept.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SliceInput.MaxStops">
+            <summary>The maximum number of stops you are willing to accept in this slice.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SliceInput.Origin">
+            <summary>Airport or city IATA designator of the origin.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SliceInput.PermittedCarrier">
+            <summary>A list of 2-letter IATA airline designators. Slices with only these carriers should be
+            returned.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SliceInput.PermittedDepartureTime">
+            <summary>Slices must depart in this time of day range, local to the point of departure.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SliceInput.PreferredCabin">
+            <summary>Prefer solutions that book in this cabin for this slice. Allowed values are COACH, PREMIUM_COACH,
+            BUSINESS, and FIRST.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SliceInput.ProhibitedCarrier">
+            <summary>A list of 2-letter IATA airline designators. Exclude slices that use these carriers.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.SliceInput.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.TaxData">
+            <summary>Tax data.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TaxData.Id">
+            <summary>An identifier uniquely identifying a tax in a response.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TaxData.Kind">
+            <summary>Identifies this as a tax data object, representing some tax. Value: the fixed string
+            qpxexpress#taxData.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TaxData.Name">
+            <summary>The name of a tax.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TaxData.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.TaxInfo">
+            <summary>Tax information.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TaxInfo.ChargeType">
+            <summary>Whether this is a government charge or a carrier surcharge.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TaxInfo.Code">
+            <summary>The code to enter in the ticket's tax box.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TaxInfo.Country">
+            <summary>For government charges, the country levying the charge.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TaxInfo.Id">
+            <summary>Identifier uniquely identifying this tax in a response. Not present for unnamed carrier
+            surcharges.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TaxInfo.Kind">
+            <summary>Identifies this as a tax information object. Value: the fixed string qpxexpress#taxInfo.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TaxInfo.SalePrice">
+            <summary>The price of the tax in the sales or equivalent currency.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TaxInfo.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.TimeOfDayRange">
+            <summary>Two times in a single day defining a time range.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TimeOfDayRange.EarliestTime">
+            <summary>The earliest time of day in HH:MM format.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TimeOfDayRange.Kind">
+            <summary>Identifies this as a time of day range object, representing two times in a single day defining a
+            time range. Value: the fixed string qpxexpress#timeOfDayRange.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TimeOfDayRange.LatestTime">
+            <summary>The latest time of day in HH:MM format.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TimeOfDayRange.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.TripOption">
+            <summary>Trip information.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripOption.Id">
+            <summary>Identifier uniquely identifying this trip in a response.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripOption.Kind">
+            <summary>Identifies this as a trip information object. Value: the fixed string
+            qpxexpress#tripOption.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripOption.Pricing">
+            <summary>Per passenger pricing information.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripOption.SaleTotal">
+            <summary>The total price for all passengers on the trip, in the form of a currency followed by an amount,
+            e.g. USD253.35.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripOption.Slice">
+            <summary>The slices that make up this trip's itinerary.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripOption.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.TripOptionsRequest">
+            <summary>A QPX Express search request, which will yield one or more solutions.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripOptionsRequest.MaxPrice">
+            <summary>Do not return solutions that cost more than this price. The alphabetical part of the price is in
+            ISO 4217. The format, in regex, is [A-Z]{3}\d+(\.\d+)? Example: $102.07</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripOptionsRequest.Passengers">
+            <summary>Counts for each passenger type in the request.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripOptionsRequest.Refundable">
+            <summary>Return only solutions with refundable fares.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripOptionsRequest.SaleCountry">
+            <summary>IATA country code representing the point of sale. This determines the "equivalent amount paid"
+            currency for the ticket.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripOptionsRequest.Slice">
+            <summary>The slices that make up the itinerary of this trip. A slice represents a traveler's intent, the
+            portion of a low-fare search corresponding to a traveler's request to get between two points. One-way
+            journeys are generally expressed using one slice, round-trips using two. An example of a one slice trip with
+            three segments might be BOS-SYD, SYD-LAX, LAX-BOS if the traveler only stopped in SYD and LAX just long
+            enough to change planes.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripOptionsRequest.Solutions">
+            <summary>The number of solutions to return, maximum 500.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripOptionsRequest.TicketingCountry">
+            <summary>IATA country code representing the point of ticketing.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripOptionsRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.TripOptionsResponse">
+            <summary>A QPX Express search response.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripOptionsResponse.Data">
+            <summary>Informational data global to list of solutions.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripOptionsResponse.Kind">
+            <summary>Identifies this as a QPX Express trip response object, which consists of zero or more solutions.
+            Value: the fixed string qpxexpress#tripOptions.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripOptionsResponse.RequestId">
+            <summary>An identifier uniquely identifying this response.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripOptionsResponse.TripOption">
+            <summary>A list of priced itinerary solutions to the QPX Express query.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripOptionsResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.TripsSearchRequest">
+            <summary>A QPX Express search request.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripsSearchRequest.Request">
+            <summary>A QPX Express search request. Required values are at least one adult or senior passenger, an
+            origin, a destination, and a date.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripsSearchRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.QPXExpress.v1.Data.TripsSearchResponse">
+            <summary>A QPX Express search response.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripsSearchResponse.Kind">
+            <summary>Identifies this as a QPX Express API search response resource. Value: the fixed string
+            qpxExpress#tripsSearch.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripsSearchResponse.Trips">
+            <summary>All possible solutions to the QPX Express search request.</summary>
+        </member>
+        <member name="P:Google.Apis.QPXExpress.v1.Data.TripsSearchResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+    </members>
+</doc>

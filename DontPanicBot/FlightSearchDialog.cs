@@ -1,12 +1,22 @@
-﻿using Microsoft.Bot.Builder.Dialogs;
+﻿using Autofac.Core;
+using Google.Apis.QPXExpress.v1;
+using Google.Apis.QPXExpress.v1.Data;
+using Google.Apis.Services;
+using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.FormFlow;
 using Microsoft.Bot.Connector;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Http;
+using System.Web.Services.Description;
 
 namespace DontPanicBot
 {
@@ -105,6 +115,7 @@ namespace DontPanicBot
             }
             else
             {
+                await context.PostAsync("You must enter a name in the correct format. Enter 'yes' to try again.");
                 context.Wait(GetFirstName);
             }
         }
@@ -126,6 +137,7 @@ namespace DontPanicBot
             }
             else
             {
+                //await context.PostAsync("You must enter a name in the correct format. Enter 'yes' to try again.");
                 await GetLastName(context, argument);
             }
         }
@@ -147,6 +159,7 @@ namespace DontPanicBot
             }
             else
             {
+                //await context.PostAsync("You must enter an email address in the correct format. Enter 'yes' to try again.");
                 await GetEmailAddress(context, argument);
             }
         }
@@ -168,6 +181,7 @@ namespace DontPanicBot
             }
             else
             {
+                //await context.PostAsync("You must enter a city name in the correct format. Enter 'yes' to try again.");
                 await GetDepartureCity(context, argument);
             }
         }
@@ -189,6 +203,7 @@ namespace DontPanicBot
             }
             else
             {
+                //await context.PostAsync("You must enter a date in the correct format. Enter 'yes' to try again.");
                 await GetDepartureDate(context, argument);
             }
         }
@@ -210,6 +225,7 @@ namespace DontPanicBot
             }
             else
             {
+                //await context.PostAsync("You must enter a city name in the correct format. Enter 'yes' to try again.");
                 await GetArrivalCity(context, argument);
             }
         }
@@ -231,6 +247,7 @@ namespace DontPanicBot
             }
             else
             {
+                //await context.PostAsync("You must enter a date in the correct format. Enter 'yes' to try again.");
                 await GetReturnDate(context, argument);
             }
         }
@@ -260,6 +277,7 @@ namespace DontPanicBot
             }
             else
             {
+                //await context.PostAsync("You must enter a budget amount in the correct format. Enter 'yes' to try again.");
                 await GetMaxBudget(context, argument);
             }
         }
@@ -270,8 +288,8 @@ namespace DontPanicBot
 
             if (fieldsCompleted)
             {
-                await context.PostAsync("Thanks! Searching for flight options now...");
-                await SearchForFlights();
+                await context.PostAsync("Great! Searching for flight options now...");
+                await SearchForFlights(context);
             }
             else
             {
@@ -281,11 +299,45 @@ namespace DontPanicBot
 
         }
 
-        public async Task SearchForFlights()
+        //AIzaSyAuHEH2vQFNlS19Y7pBD95BC-4y4Lt8zsw
+        public async Task SearchForFlights(IDialogContext context)
         {
+            var airports = new List<string>();
+            var trips = new List<string>();
 
+            QPXExpressService service = new QPXExpressService(new BaseClientService.Initializer()
+            {
+                ApiKey = "AIzaSyAuHEH2vQFNlS19Y7pBD95BC-4y4Lt8zsw",
+                ApplicationName = "DontPanicAdventures"
+            });
 
+            TripsSearchRequest qpxRequest = new TripsSearchRequest();
 
+            qpxRequest.Request = new TripOptionsRequest();
+            qpxRequest.Request.Passengers = new PassengerCounts { AdultCount = 1 };
+            qpxRequest.Request.Slice = new List<SliceInput>();
+            qpxRequest.Request.Slice.Add(new SliceInput() { Origin = "MKE", Destination = "LCY", Date = "2016-12-12" });
+            qpxRequest.Request.Solutions = 5;
+
+            var results = service.Trips.Search(qpxRequest).Execute();
+
+            foreach (var airport in results.Trips.Data.Airport)
+            {
+                airports.Add(airport.Name + " || " + airport.City);
+            }
+
+            foreach (var trip in results.Trips.TripOption)
+            {
+                trips.Add("Duration: " + trip.Slice.FirstOrDefault().Duration + 
+                            " || Price: USD" + trip.Pricing.FirstOrDefault().BaseFareTotal.ToString());
+            }
+
+            var flights = airports.Zip(trips, (a, t) => a + " || " + t);
+
+            foreach (var flight in flights)
+            {
+                await context.PostAsync(flight);
+            }
         }
 
 

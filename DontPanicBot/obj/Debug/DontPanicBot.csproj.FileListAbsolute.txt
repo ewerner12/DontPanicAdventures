@@ -37,3 +37,19 @@ C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdv
 C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\obj\Debug\DontPanicBot.csprojResolveAssemblyReference.cache
 C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\obj\Debug\Bot Application1.dll
 C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\obj\Debug\Bot Application1.pdb
+C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Google.Apis.Core.dll
+C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Google.Apis.dll
+C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Google.Apis.PlatformServices.dll
+C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Google.Apis.QPXExpress.v1.dll
+C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\log4net.dll
+C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Zlib.Portable.dll
+C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Google.Apis.pdb
+C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Google.Apis.xml
+C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Google.Apis.Core.pdb
+C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Google.Apis.Core.xml
+C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Google.Apis.PlatformServices.pdb
+C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Google.Apis.PlatformServices.xml
+C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Google.Apis.QPXExpress.v1.pdb
+C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Google.Apis.QPXExpress.v1.xml
+C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\log4net.xml
+C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Zlib.Portable.xml
