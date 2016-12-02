@@ -35,10 +35,13 @@ namespace DontPanicBot
         protected string arrivalCity;
         protected string returnDate;
         protected string maxBudget;
+        protected List<string> affirmativeResponses = new List<string> { "yes", "yeah", "sure", "absolutely", "affirmative", "yarp" };
+        protected List<string> negativeResponses = new List<string> { "no", "nah", "not really", "nope" };
+        protected Regex iataRegex = new Regex(@"[A-Z]{3}");
         protected Regex nameRegex = new Regex(@"[A-Z][a-z]+");
         protected Regex emailRegex = new Regex(@"\w+[@]\w+[.]\w+");
         protected Regex dateRegex = new Regex(@"^201[6-7]-\d{2}-\d{2}");
-        protected Regex budgetRegex = new Regex(@"^[0-9]+");
+        protected Regex budgetRegex = new Regex(@"^[0-9]{1,4}[.][0-9]{2}$");
 
         public async Task StartAsync(IDialogContext context)
         {
@@ -67,8 +70,6 @@ namespace DontPanicBot
         {
             //////var activity = await context; //need to create an Activity
             var message = await argument;
-            List<string> affirmativeResponses = new List<string> { "yes", "yeah", "sure", "absolutely", "affirmative", "yarp" };
-            List<string> negativeResponses = new List<string> { "no", "nah", "not really", "nope" };
             bool affirmativeConfirmation = affirmativeResponses.Contains(message.Text.ToLower());
             bool negativeConfirmation = negativeResponses.Contains(message.Text.ToLower());
 
@@ -154,7 +155,7 @@ namespace DontPanicBot
                 PromptDialog.Text(
                     context,
                     GetDepartureDate,
-                    "Which city would you like to depart from?",
+                    "Which city would you like to depart from? (Use IATA code please)",
                     "Please enter a departure city name in the valid format.");
             }
             else
@@ -167,7 +168,7 @@ namespace DontPanicBot
         public async Task GetDepartureDate(IDialogContext context, IAwaitable<string> argument)
         {
             string message = await argument;
-            Match hasDepartureCity = nameRegex.Match(message);
+            Match hasDepartureCity = iataRegex.Match(message);
 
             if (hasDepartureCity.Success)
             {
@@ -198,7 +199,7 @@ namespace DontPanicBot
                 PromptDialog.Text(
                     context,
                     GetReturnDate,
-                    "Which city would you like to travel to?",
+                    "Which city would you like to travel to? (Use IATA code please)",
                     "Please enter an arrival city name in the valid format.");
             }
             else
@@ -211,7 +212,7 @@ namespace DontPanicBot
         public async Task GetReturnDate(IDialogContext context, IAwaitable<string> argument)
         {
             string message = await argument;
-            Match hasArrivalCity = nameRegex.Match(message);
+            Match hasArrivalCity = iataRegex.Match(message);
 
             if (hasArrivalCity.Success)
             {
@@ -242,7 +243,7 @@ namespace DontPanicBot
                 PromptDialog.Text(
                     context,
                     ConfirmSearchFlightParameters,
-                    "What is your maximum budget for this trip? (in USD888.88) ",
+                    "What is your maximum budget for this trip? (in 888.88) ",
                     "Sorry, please enter a valid numerical value.");
             }
             else
@@ -257,9 +258,9 @@ namespace DontPanicBot
             string message = await argument;
             Match hasMaxBudget = budgetRegex.Match(message);
 
-            if (hasMaxBudget.Success & Convert.ToInt32(message) > 0)
+            if (hasMaxBudget.Success & Convert.ToDouble(message) > 0)
             {
-                maxBudget = message;
+                maxBudget = "USD" + message;
 
                 PromptDialog.Confirm(
                     context,
@@ -272,7 +273,7 @@ namespace DontPanicBot
                         $"Departure Date: {departureDate} || " +
                         $"Arrival City: {arrivalCity} || " +
                         $"Return Date: {returnDate} || " +
-                        $"Budget: ${maxBudget} ",
+                        $"Budget: {maxBudget} ",
                     "Sorry, some information is missing. Please provide all information.");
             }
             else
@@ -316,20 +317,22 @@ namespace DontPanicBot
             qpxRequest.Request = new TripOptionsRequest();
             qpxRequest.Request.Passengers = new PassengerCounts { AdultCount = 1 };
             qpxRequest.Request.Slice = new List<SliceInput>();
-            qpxRequest.Request.Slice.Add(new SliceInput() { Origin = "MKE", Destination = "LCY", Date = "2016-12-12" });
+            qpxRequest.Request.Slice.Add(new SliceInput() { Origin = departureCity , Destination = arrivalCity, Date = departureDate  });
+            qpxRequest.Request.MaxPrice = maxBudget;
             qpxRequest.Request.Solutions = 5;
 
             var results = service.Trips.Search(qpxRequest).Execute();
 
             foreach (var airport in results.Trips.Data.Airport)
             {
-                airports.Add(airport.Name + " || " + airport.City);
+                airports.Add(airport.Code + " || " + airport.Name + " || " + airport.City);
             }
 
             foreach (var trip in results.Trips.TripOption)
             {
-                trips.Add("Duration: " + trip.Slice.FirstOrDefault().Duration + 
-                            " || Price: USD" + trip.Pricing.FirstOrDefault().BaseFareTotal.ToString());
+                trips.Add("Flight No.: " + trip.Slice.FirstOrDefault().Segment.FirstOrDefault().Flight.Number +
+                            " || Duration: " + trip.Slice.FirstOrDefault().Duration + 
+                            " || Price: " + trip.Pricing.FirstOrDefault().BaseFareTotal.ToString());
             }
 
             var flights = airports.Zip(trips, (a, t) => a + " || " + t);
@@ -337,6 +340,35 @@ namespace DontPanicBot
             foreach (var flight in flights)
             {
                 await context.PostAsync(flight);
+            }
+
+            PromptDialog.Text(
+                context,
+                StartNewSearch,
+                "Thanks for using our services! Would you like to start a new search?",
+                "Sorry I didn't catch that. Did you want to start a new search?");
+        }
+
+        public async Task StartNewSearch(IDialogContext context, IAwaitable<string> argument)
+        {
+            string message = await argument;
+            bool confirmRestart = affirmativeResponses.Contains(message);
+            bool rejectRestart = negativeResponses.Contains(message);
+
+            if (confirmRestart)
+            {
+                await context.PostAsync("Sounds good! Let's start over!");
+                await GetDepartureCity(context, argument);
+            }
+            else if (rejectRestart)
+            {
+                await context.PostAsync("No worries! Thanks for using our services and have a great day!");
+                context.Wait(StartFlightSearch);
+            }
+            else
+            {
+                await context.PostAsync("I'm sorry, I didn't catch that. Would you like to plan another trip?");
+                context.Wait(StartFlightSearch);
             }
         }
 
