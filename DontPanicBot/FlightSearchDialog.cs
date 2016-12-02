@@ -363,12 +363,12 @@ namespace DontPanicBot
             else if (rejectRestart)
             {
                 await context.PostAsync("No worries! Thanks for using our services and have a great day!");
-                context.Wait(StartFlightSearch);
+                await StartNewSearch(context, argument);
             }
             else
             {
                 await context.PostAsync("I'm sorry, I didn't catch that. Would you like to plan another trip?");
-                context.Wait(StartFlightSearch);
+                await StartNewSearch(context, argument);
             }
         }
 
