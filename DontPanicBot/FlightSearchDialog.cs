@@ -64,11 +64,13 @@ namespace DontPanicBot
 
             if (affirmativeConfirmation)
             {
-                context.Wait(GetFirstName);
+                await context.PostAsync("Great! Let's get started!");
+                await GetFirstName(context, argument);
             }
             else if (negativeConfirmation)
             {
                 await context.PostAsync("Not a problem. How may I assist you today?");
+                context.Wait(StartFlightSearch);
             }
             else
             {
@@ -191,25 +193,6 @@ namespace DontPanicBot
             }
         }
 
-        //////public async Task GetArrivalDate(IDialogContext context, IAwaitable<string> argument)
-        //////{
-        //////    string message = await argument;
-        //////    Match hasFirstName = nameRegex.Match(message);
-
-        //////    if (hasFirstName.Success)
-        //////    {
-        //////        PromptDialog.Text(
-        //////            context,
-        //////            GetEmailAddress,
-        //////            "Please enter your last name: ",
-        //////            "Sorry, please enter a name in the correct format.");
-        //////    }
-        //////    else
-        //////    {
-        //////        context.Wait(GetFirstName);
-        //////    }
-        //////}
-
         public async Task GetMaxBudget(IDialogContext context, IAwaitable<string> argument)
         {
             string message = await argument;
@@ -222,8 +205,8 @@ namespace DontPanicBot
                 PromptDialog.Text(
                     context,
                     ConfirmSearchFlightParameters,
-                    "Please enter your last name: ",
-                    "Sorry, please enter a name in the correct format.");
+                    "What is your maximum budget for this trip?",
+                    "Sorry, please enter a valid numerical value.");
             }
             else
             {
@@ -243,7 +226,21 @@ namespace DontPanicBot
                 PromptDialog.Confirm(
                     context,
                     SearchForFlightOptions,
-                    $"Please review that the following information is correct:",
+                    $"Please review that the following information is correct:\r\nFirst Name: {firstName}" +
+                        Environment.NewLine + 
+                        $"First Name: {firstName}" +
+                        Environment.NewLine +
+                        $"Last Name: {lastName}" +
+                        Environment.NewLine +
+                        $"Email Address: {emailAddress}" +
+                        Environment.NewLine +
+                        $"Departure City: {departureCity}" +
+                        Environment.NewLine +
+                        $"Departure Date: {departureDate}" +
+                        Environment.NewLine +
+                        $"Arrival City: {arrivalCity}" +
+                        Environment.NewLine +
+                        $"Budget: ${maxBudget}",
                     "Sorry, some information is missing. Please provide all information.");
             }
             else
@@ -254,9 +251,37 @@ namespace DontPanicBot
 
         public async Task SearchForFlightOptions(IDialogContext context, IAwaitable<bool> argument)
         {
+            bool fieldsCompleted = await argument;
+
+            if (fieldsCompleted)
+            {
+                await context.PostAsync("Thanks! Searching for flight options now...");
+            }
+            else
+            {
+                await context.PostAsync("Not a problem. Please try again!");
+            }
 
         }
 
+        //////public async Task GetArrivalDate(IDialogContext context, IAwaitable<string> argument)
+        //////{
+        //////    string message = await argument;
+        //////    Match hasFirstName = nameRegex.Match(message);
+
+        //////    if (hasFirstName.Success)
+        //////    {
+        //////        PromptDialog.Text(
+        //////            context,
+        //////            GetEmailAddress,
+        //////            "Please enter your last name: ",
+        //////            "Sorry, please enter a name in the correct format.");
+        //////    }
+        //////    else
+        //////    {
+        //////        context.Wait(GetFirstName);
+        //////    }
+        //////}
 
 
 
