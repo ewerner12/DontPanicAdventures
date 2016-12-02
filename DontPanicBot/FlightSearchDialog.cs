@@ -23,12 +23,12 @@ namespace DontPanicBot
         protected string departureCity;
         protected string departureDate;
         protected string arrivalCity;
-        protected string arrivalDate; //do not need to prompt for this
+        protected string returnDate;
         protected string maxBudget;
         protected Regex nameRegex = new Regex(@"[A-Z][a-z]+");
         protected Regex emailRegex = new Regex(@"\w+[@]\w+[.]\w+");
-        protected Regex dateRegex = new Regex(@"\d{1,2}\/\d{1,2}\/201[6-7]$");
-        protected Regex budgetRegex = new Regex(@"[0-9]+");
+        protected Regex dateRegex = new Regex(@"^201[6-7]-\d{2}-\d{2}");
+        protected Regex budgetRegex = new Regex(@"^[0-9]+");
 
         public async Task StartAsync(IDialogContext context)
         {
@@ -163,7 +163,7 @@ namespace DontPanicBot
                 PromptDialog.Text(
                     context,
                     GetArrivalCity,
-                    "What date would you like to depart on?",
+                    "What date would you like to depart on? (YYYY-MM-DD)",
                     "Please enter a departure date in the correct format.");
             }
             else
@@ -183,7 +183,7 @@ namespace DontPanicBot
 
                 PromptDialog.Text(
                     context,
-                    GetMaxBudget,
+                    GetReturnDate,
                     "Which city would you like to travel to?",
                     "Please enter an arrival city name in the valid format.");
             }
@@ -193,7 +193,7 @@ namespace DontPanicBot
             }
         }
 
-        public async Task GetMaxBudget(IDialogContext context, IAwaitable<string> argument)
+        public async Task GetReturnDate(IDialogContext context, IAwaitable<string> argument)
         {
             string message = await argument;
             Match hasArrivalCity = nameRegex.Match(message);
@@ -204,13 +204,34 @@ namespace DontPanicBot
 
                 PromptDialog.Text(
                     context,
-                    ConfirmSearchFlightParameters,
-                    "What is your maximum budget for this trip?",
-                    "Sorry, please enter a valid numerical value.");
+                    GetMaxBudget,
+                    "When would you like to return? (YYYY-MM-DD)",
+                    "Sorry, please enter a return date in the correct format.");
             }
             else
             {
                 await GetArrivalCity(context, argument);
+            }
+        }
+
+        public async Task GetMaxBudget(IDialogContext context, IAwaitable<string> argument)
+        {
+            string message = await argument;
+            Match hasReturnDate = dateRegex.Match(message);
+
+            if (hasReturnDate.Success)
+            {
+                returnDate = message;
+
+                PromptDialog.Text(
+                    context,
+                    ConfirmSearchFlightParameters,
+                    "What is your maximum budget for this trip? (in USD888.88) ",
+                    "Sorry, please enter a valid numerical value.");
+            }
+            else
+            {
+                await GetReturnDate(context, argument);
             }
         }
 
@@ -226,21 +247,15 @@ namespace DontPanicBot
                 PromptDialog.Confirm(
                     context,
                     SearchForFlightOptions,
-                    $"Please review that the following information is correct:\r\nFirst Name: {firstName}" +
-                        Environment.NewLine + 
-                        $"First Name: {firstName}" +
-                        Environment.NewLine +
-                        $"Last Name: {lastName}" +
-                        Environment.NewLine +
-                        $"Email Address: {emailAddress}" +
-                        Environment.NewLine +
-                        $"Departure City: {departureCity}" +
-                        Environment.NewLine +
-                        $"Departure Date: {departureDate}" +
-                        Environment.NewLine +
-                        $"Arrival City: {arrivalCity}" +
-                        Environment.NewLine +
-                        $"Budget: ${maxBudget}",
+                    $"Please review that the following information is correct >> " +
+                        $"First Name: {firstName} || " +
+                        $"Last Name: {lastName} || " +
+                        $"Email Address: {emailAddress} || " +
+                        $"Departure City: {departureCity} || " +
+                        $"Departure Date: {departureDate} || " +
+                        $"Arrival City: {arrivalCity} || " +
+                        $"Return Date: {returnDate} || " +
+                        $"Budget: ${maxBudget} ",
                     "Sorry, some information is missing. Please provide all information.");
             }
             else
@@ -256,33 +271,22 @@ namespace DontPanicBot
             if (fieldsCompleted)
             {
                 await context.PostAsync("Thanks! Searching for flight options now...");
+                await SearchForFlights();
             }
             else
             {
                 await context.PostAsync("Not a problem. Please try again!");
+                context.Wait(AskUserToStartSearch);
             }
 
         }
 
-        //////public async Task GetArrivalDate(IDialogContext context, IAwaitable<string> argument)
-        //////{
-        //////    string message = await argument;
-        //////    Match hasFirstName = nameRegex.Match(message);
+        public async Task SearchForFlights()
+        {
 
-        //////    if (hasFirstName.Success)
-        //////    {
-        //////        PromptDialog.Text(
-        //////            context,
-        //////            GetEmailAddress,
-        //////            "Please enter your last name: ",
-        //////            "Sorry, please enter a name in the correct format.");
-        //////    }
-        //////    else
-        //////    {
-        //////        context.Wait(GetFirstName);
-        //////    }
-        //////}
 
+
+        }
 
 
 
