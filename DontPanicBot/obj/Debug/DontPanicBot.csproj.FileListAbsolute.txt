@@ -16,12 +16,9 @@ C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdv
 C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Autofac.xml
 C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Microsoft.Bot.Builder.xml
 C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Microsoft.Bot.Connector.xml
-C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Microsoft.IdentityModel.Protocol.Extensions.pdb
 C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
-C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Microsoft.Rest.ClientRuntime.xml
 C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Microsoft.WindowsAzure.Configuration.xml
 C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Newtonsoft.Json.xml
-C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\System.IdentityModel.Tokens.Jwt.pdb
 C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\System.IdentityModel.Tokens.Jwt.xml
 C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\System.Net.Http.Formatting.xml
 C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\System.Web.Http.xml
@@ -53,3 +50,5 @@ C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdv
 C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Google.Apis.QPXExpress.v1.xml
 C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\log4net.xml
 C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\Zlib.Portable.xml
+C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\cs\Microsoft.Bot.Builder.resources.dll
+C:\Users\Eric Werner\Documents\Visual Studio 2015\Projects\CAPSTONE\DontPanicAdventures\DontPanicAdventures\DontPanicBot\bin\de-dE\Microsoft.Bot.Builder.resources.dll
